@@ -249,11 +249,14 @@ function incrementarPorUno(array) {
 function devolverPrimerElemento(array) {
   /*   Devuelve el primer elemento de un  array (pasado por parametro)
    ↓↓↓ Tu código: ↓↓↓ */
+   return(array[0])
 }
 
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
+  var ultimo = array[array.length-1]
+  return ultimo
 }
 
 function dePalabrasAFrase(palabras) {
@@ -262,23 +265,42 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello','world!'] -> 'Hello World!'
   // Tu código:
+  return palabras.join(' ')
 }
 
 function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+  for(let i = 0; i < array.length ; i++){
+     if(array[i] === elemento){
+      return true
+     }
+  }
+  return false
 }
 
 function agregarNumeros(numeros) {
   // "numeros" es un array de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor(puedes usar .reduce() )
   // Tu código:
+  const inicio = 0;
+  const suma = numeros.reduce(
+  (acumulador, actual) => acumulador + actual,
+  inicio);
+  return suma
 }
 
 function cuentoElementos(arreglo) {
   //Realiza una función que retorne la cantidad de los elementos del array donde el valor es mayor a 18.
   //Escribe tu código aquí:
+  var contador = 0
+  for(let i = 0; i < arreglo.length; i++){
+    if(arreglo[i]>18){
+      contador++
+    }
+  }
+  return contador
 }
 
 function empiezaConNueve(n) {
@@ -286,12 +308,22 @@ function empiezaConNueve(n) {
   //inicia con 9 y false en otro caso.
   //PISTA: para saber si un numero comienza con 9 debes pasarlo a string y analizar la posicion [0] del numero convertido.
   //Escribe tu código aquí
+  if(n.toString()[0] === '9'){
+    return true
+  }
+  return false
 }
 
 function todosIguales(arreglo) {
   //indique si todos los elementos de un arreglo son iguales:
   //retornar true si son todos iguales, caso contrario retornar false.
   //Escribe tu código aquí
+  for(let i = 0; i < arreglo.length - 1; i++){
+    if(arreglo[i] != arreglo[i+1]){
+      return false
+    }
+  }
+  return true
 }
 
 function mesesDelAño(array) {
@@ -299,11 +331,34 @@ function mesesDelAño(array) {
   //"Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
+  const jan = 'Enero';
+  const mar = 'Marzo';
+  const nov = 'Noviembre';
+  var arr = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === nov || array[i] === mar || array[i] === jan) {
+      arr.push(array[i]);
+    }
+  }
+
+  if (arr.length < 3) {
+    return 'No se encontraron los meses pedidos';
+  } else {
+    return arr;
+  }
 }
 
 function elementosMayores(array) {
   //Realiza una función que retorne la cantidad de los elementos del arreglo donde el valor sea mayor a 18
   //Escribe tu código aquí:
+  var contador = 0
+  for(let i = 0; i < array.length; i++){
+    if(array[i]>18){
+      contador++
+    }
+  }
+  return contador
 }
 
 function mayorACien(array) {
@@ -311,6 +366,13 @@ function mayorACien(array) {
  valores mayores a 100 (no incluye el 100).
 La funcion debe devolver el nuevo array. */
   // Tu código:
+  var arr = []
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > 100) {
+      arr.push(array[i]);
+    }
+  }
+    return arr;
 }
 
 // // No modificar nada debajo de esta línea//
