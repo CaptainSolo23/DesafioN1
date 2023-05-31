@@ -125,12 +125,14 @@ function agregarSimboloExclamacion(str) {
   // Agrega un símbolo de exclamación al final de la string "str" y devuelve una nueva string
   // Ejemplo: "hello world" pasaría a ser "hello world!"
   // Tu código:
+  return (`${str}!`)
 }
 
 function deEuroAdolar(euro) {
   /*  Supongamos que 1 euro equivale a 1.20 dólares. Escribe un programa que reciba
   como parámetro un número de euros y calcule el cambio en dólares. "suponiendo que vale 1.20"
   Escribe tu código aquí */
+  return(euro*1.2)
 }
 
 function esVocal(letra) {
@@ -139,18 +141,34 @@ function esVocal(letra) {
   que no se puede procesar el dato mediante el mensaje "Dato incorrecto".
   Si no es vocal, tambien debe devolver "Dato incorrecto".
   Escribe tu código aquí */
+  if(letra === 'a' || letra === 'e' || letra === 'e' || letra === 'i' || letra === 'o' || letra === 'u'){
+    return('Es vocal')
+  }
+  else if(letra.length > 1){
+    return('Dato incorrecto')
+  }
+  else{
+    return('Dato incorrecto')
+  }
 }
 
 function esDiezOCinco(numero) {
   // Devuelve "true" si "numero" es 10 o 5
   // De lo contrario, devuelve "false"
   // Tu código:
+  if(numero === 10 || numero === 5){
+    return true
+  }
+  else{
+    return false
+  }
 }
 
 function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
+  return(numero > 20 && numero < 50 ? true : false)
 }
 
 function operadoresLogicos(num1, num2, num3) {
@@ -160,6 +178,17 @@ function operadoresLogicos(num1, num2, num3) {
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false.
+  if (num1 < 0 || num2 < 0 || num3 < 0) {
+    return "Hay negativos";
+  } else if (num1 === 0 || num2 === 0 || num3 === 0) {
+    return "Error";
+  } else if (num1 > num2 && num1 > num3 && num1 > 0) {
+    return "Número 1 es mayor y positivo";
+  } else if (num3 > num1 && num3 > num2) {
+    return num3 + 1;
+  } else {
+    return false;
+  }
 }
 
 function tablaDelSeis() {
@@ -167,17 +196,30 @@ function tablaDelSeis() {
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //resultado esperado: [0 , 6, 12, 18, 24, 30, 36, 42, 48, 54, 60]
   //Escribe tu código aquí:
+  var seis = 6;
+  var tabla = []
+  for(let i = 0; i < 11 ; i++){
+    tabla[i] = seis*i
+  }
+  return tabla
 }
 
 function tieneTresDigitos(numero) {
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //PISTA: deberas usar un metodo para pasar el numero a string y asi poder leer su longitud con .length ;)
   //Escribe tu código aquí:
+  if(numero.toString().length === 3){
+    return true
+  }
+  else{
+    return false
+  }
 }
 
 function obtenerLargoDelArray(array) {
   // Devuelve el largo de un array
   // Tu código:
+  return array.length
 }
 
 function incrementarPorUno(array) {
@@ -185,6 +227,10 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
+  for(let i = 0; i < array.length; i++){
+    array[i] = array[i] + 1
+  }
+  return array
 }
 
 /* 
